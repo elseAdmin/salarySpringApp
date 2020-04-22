@@ -21,7 +21,9 @@ public class Company {
     @Column
     private String website;
     @Column
-    private Boolean isESICEnabled;
+    private boolean isESICEnabled;
     @Column
-    private Boolean isPFEnabled;
+    private boolean isPFEnabled;
+    @Column
+    private long userId;
 }

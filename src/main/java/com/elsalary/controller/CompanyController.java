@@ -5,6 +5,8 @@ import com.elsalary.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class CompanyController {
@@ -14,6 +16,11 @@ public class CompanyController {
 
     @RequestMapping(value = "/company", method = RequestMethod.POST)
     public Company create(@RequestBody Company company) {
-        return null;
+        return companyService.createCompany(company);
+    }
+
+    @RequestMapping(value = "/company", method = RequestMethod.GET)
+    public List<Company> get() {
+        return companyService.getCompany();
     }
 }
