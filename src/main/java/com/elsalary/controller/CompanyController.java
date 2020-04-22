@@ -1,6 +1,7 @@
 package com.elsalary.controller;
 
 import com.elsalary.model.Company;
+import com.elsalary.model.Request.company.CompanyCreateRequest;
 import com.elsalary.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +16,8 @@ public class CompanyController {
     private CompanyService companyService;
 
     @RequestMapping(value = "/company", method = RequestMethod.POST)
-    public Company create(@RequestBody Company company) {
-        return companyService.createCompany(company);
+    public Company create(@RequestBody CompanyCreateRequest companyCreateRequest) {
+        return companyService.createCompany(companyCreateRequest);
     }
 
     @RequestMapping(value = "/company", method = RequestMethod.GET)
