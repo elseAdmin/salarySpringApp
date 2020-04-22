@@ -13,7 +13,7 @@ import lombok.Data;
 public class BranchEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
+    private Long id;
     @Column
     private String name;
     @Column
@@ -24,4 +24,6 @@ public class BranchEntity {
     private String email;
     @Column
     private String contactPerson;
+    @Column
+    private Long companyId;
 }

@@ -18,6 +18,7 @@ public class BranchService {
 		entity.setContactPerson(body.getContactPerson());
 		entity.setEmail(body.getEmail());
 		entity.setName(body.getName());
+		entity.setCompanyId(body.getCompanyId());
 		branchRespository.save(entity);
 		return null;
 	}
