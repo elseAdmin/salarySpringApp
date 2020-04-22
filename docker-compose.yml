@@ -1,0 +1,12 @@
+version: '3'
+services:
+  hk-mysql:
+    container_name: hk-mysql
+    image: mysql/mysql-server:5.7
+    environment:
+      MYSQL_DATABASE: salary
+      MYSQL_ROOT_PASSWORD: salaryElse
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "3306:3306"
+    restart: always
