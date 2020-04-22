@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.elsalary.model.User;
+import com.elsalary.model.BranchEntity;
 import com.elsalary.model.Request.BranchCreateRequest;
 import com.elsalary.service.BranchService;
 
@@ -19,7 +19,7 @@ public class BranchController {
     private BranchService service;
 
     @RequestMapping(value = "/branch/add", method = RequestMethod.POST)
-    public User createAdmin(HttpServletRequest request,@RequestBody BranchCreateRequest body) {
+    public BranchEntity createAdmin(HttpServletRequest request,@RequestBody BranchCreateRequest body) {
         return service.saveBranch(body);
     }
 }
