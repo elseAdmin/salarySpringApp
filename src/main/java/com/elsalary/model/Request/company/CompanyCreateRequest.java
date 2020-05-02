@@ -9,7 +9,7 @@ public class CompanyCreateRequest {
     private String phoneNo;
     private String email;
     private String website;
-    private boolean isESICEnabled;
-    private boolean isPFEnabled;
-    private long userId;
+    private String isESICEnabled;
+    private String isPFEnabled;
+    private Long userId;
 }

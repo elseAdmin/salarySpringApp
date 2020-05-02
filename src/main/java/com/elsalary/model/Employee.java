@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class EmployeeEntity {
+public class Employee {
 	@Id
     @GeneratedValue
     private long id;

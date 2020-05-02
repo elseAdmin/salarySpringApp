@@ -3,7 +3,7 @@ package com.elsalary.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.elsalary.model.EmployeeEntity;
+import com.elsalary.model.Employee;
 import com.elsalary.model.Request.EmployeeCreateRequest;
 import com.elsalary.repository.EmployeeRepository;
 
@@ -12,8 +12,8 @@ public class EmployeeService {
 	@Autowired
 	EmployeeRepository employeeRepository;
 
-	public EmployeeEntity saveEmployee(EmployeeCreateRequest body) {
-		EmployeeEntity entity = new EmployeeEntity();
+	public Employee saveEmployee(EmployeeCreateRequest body) {
+		Employee entity = new Employee();
 		entity.setAadhaar(body.getAadhaar());
 		entity.setAddress(body.getAddress());
 		entity.setBasicSalary(body.getBasicSalary());

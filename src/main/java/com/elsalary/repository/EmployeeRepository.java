@@ -3,8 +3,8 @@ package com.elsalary.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.elsalary.model.EmployeeEntity;
+import com.elsalary.model.Employee;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<EmployeeEntity, Long> {
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 }
