@@ -4,7 +4,6 @@ import com.elsalary.model.Company;
 import com.elsalary.model.Request.company.CompanyCreateRequest;
 import com.elsalary.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,7 +27,7 @@ public class CompanyService {
         return companyRepository.save(company);
     }
 
-    public List<Company> getCompany() {
-        return companyRepository.findAll();
-    }
+	public List<Company> getCompany() {
+		return companyRepository.findAll();
+	}
 }

@@ -1,9 +1,12 @@
 package com.elsalary.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
-import com.elsalary.model.BranchEntity;
+import com.elsalary.model.Branch;
 import com.elsalary.model.Request.BranchCreateRequest;
 import com.elsalary.repository.BranchRepository;
 
@@ -11,9 +14,9 @@ import com.elsalary.repository.BranchRepository;
 public class BranchService {
 	@Autowired
 	BranchRepository branchRespository;
-	
-	public BranchEntity saveBranch(BranchCreateRequest body) {
-		BranchEntity entity = new BranchEntity();
+
+	public Branch saveBranch(BranchCreateRequest body) {
+		Branch entity = new Branch();
 		entity.setAddress(body.getAddress());
 		entity.setContactPerson(body.getContactPerson());
 		entity.setEmail(body.getEmail());
@@ -22,4 +25,7 @@ public class BranchService {
 		return branchRespository.save(entity);
 	}
 
+	public List<Branch> getAllBranchForCompany(Long companyId) {
+		return branchRespository.getAllBranchForCompany(companyId);
+	}
 }

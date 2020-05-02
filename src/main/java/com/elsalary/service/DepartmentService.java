@@ -1,9 +1,12 @@
 package com.elsalary.service;
 
-import com.elsalary.model.Department;
-import com.elsalary.repository.DepartmentRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.elsalary.model.Department;
+import com.elsalary.repository.DepartmentRepository;
 
 @Service
 public class DepartmentService {
@@ -13,5 +16,9 @@ public class DepartmentService {
 
     public Department createDepartment(Department department) {
         return departmentRepository.save(department);
+    }
+    
+    public List<Department> getAllDepartmentForBranch(Long branchId){
+    	return departmentRepository.getAllDepartmentForBranch(branchId);
     }
 }
