@@ -23,8 +23,8 @@ public class CompanyService {
         company.setPhoneNo(companyCreateRequest.getPhoneNo());
         company.setWebsite(companyCreateRequest.getWebsite());
         company.setUserId(companyCreateRequest.getUserId());
-        company.setESICEnabled(companyCreateRequest.isESICEnabled());
-        company.setPFEnabled(companyCreateRequest.isPFEnabled());
+        company.setContactPerson(companyCreateRequest.getContactPerson());
+        company.setMobileNo(companyCreateRequest.getMobileNo());
         return companyRepository.save(company);
     }
 
