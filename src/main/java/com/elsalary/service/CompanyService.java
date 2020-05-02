@@ -21,7 +21,7 @@ public class CompanyService {
         company.setEmail(companyCreateRequest.getEmail());
         company.setPhoneNo(companyCreateRequest.getPhoneNo());
         company.setWebsite(companyCreateRequest.getWebsite());
-        company.setUserId(companyCreateRequest.getUserId());
+        company.setCreatedByUserId(companyCreateRequest.getUserId());
         company.setContactPerson(companyCreateRequest.getContactPerson());
         company.setMobileNo(companyCreateRequest.getMobileNo());
         return companyRepository.save(company);

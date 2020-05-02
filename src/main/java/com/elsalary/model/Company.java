@@ -2,7 +2,12 @@ package com.elsalary.model;
 
 import lombok.Data;
 
+import java.util.Date;
+
 import javax.persistence.*;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Data
@@ -25,5 +30,15 @@ public class Company {
     @Column
     private String contactPerson;
     @Column
-    private long userId;
+    private Long createdByUserId;
+    
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "create_date")
+    private Date createDate;
+
+    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "modify_date")
+    private Date modifyDate;
 }
