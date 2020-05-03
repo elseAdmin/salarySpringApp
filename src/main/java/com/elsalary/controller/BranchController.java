@@ -24,18 +24,24 @@ public class BranchController {
 	private BranchService service;
 
 	@RequestMapping(value = "/branch/add", method = RequestMethod.POST)
-	public Branch createAdmin(HttpServletRequest request, @RequestBody BranchCreateRequest body) {
+	public Branch create(HttpServletRequest request, @RequestBody BranchCreateRequest body) {
 		return service.saveBranch(body);
 	}
 
 	@RequestMapping(value = "/allBranch/{companyId}", method = RequestMethod.GET)
-	public ResponseEntity createAdmin(HttpServletRequest request, @RequestParam Long companyId) {
+	public ResponseEntity getAll(HttpServletRequest request, @RequestParam Long companyId) {
 		List<Branch> branches = service.getAllBranchForCompany(companyId);
 
 		if (branches == null || branches.size() < 1) {
 			return new ResponseEntity("no branches found for given company", HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity(branches, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/branch/delete/{branchId}", method = RequestMethod.GET)
+	public ResponseEntity delete(@RequestParam Long branchId) {
+		 service.deleteBranch(branchId);
+		 return new ResponseEntity(HttpStatus.OK);
 	}
 
 }

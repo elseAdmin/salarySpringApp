@@ -28,10 +28,16 @@ public class DepartmentController {
 	}
 
 	@RequestMapping(value = "/allDepartment/{branchId}", method = RequestMethod.GET)
-	public ResponseEntity create(@RequestBody Department department, @RequestParam Long branchId) {
+	public ResponseEntity getAll(@RequestBody Department department, @RequestParam Long branchId) {
 		List<Department> departments = departmentService.getAllDepartmentForBranch(branchId);
 		if (departments != null || departments.size() < 1)
 			return new ResponseEntity("no departments for given branch", HttpStatus.NOT_FOUND);
 		return new ResponseEntity(departments, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/department/delete/{departmentId}", method = RequestMethod.POST)
+	public ResponseEntity delete(@RequestParam Long departmentId) {
+		departmentService.deleteDepartment(departmentId);
+		return new ResponseEntity(HttpStatus.OK);
 	}
 }

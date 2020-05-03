@@ -11,23 +11,29 @@ import java.util.List;
 @Service
 public class CompanyService {
 
-    @Autowired
-    private CompanyRepository companyRepository;
+	@Autowired
+	private CompanyRepository companyRepository;
 
-    public Company createCompany(CompanyCreateRequest companyCreateRequest) {
-        Company company = new Company();
-        company.setName(companyCreateRequest.getName());
-        company.setAddress(companyCreateRequest.getAddress());
-        company.setEmail(companyCreateRequest.getEmail());
-        company.setPhoneNo(companyCreateRequest.getPhoneNo());
-        company.setWebsite(companyCreateRequest.getWebsite());
-        company.setCreatedByUserId(companyCreateRequest.getUserId());
-        company.setContactPerson(companyCreateRequest.getContactPerson());
-        company.setMobileNo(companyCreateRequest.getMobileNo());
-        return companyRepository.save(company);
-    }
+	public Company createCompany(CompanyCreateRequest companyCreateRequest) {
+		Company company = new Company();
+		company.setName(companyCreateRequest.getName());
+		company.setAddress(companyCreateRequest.getAddress());
+		company.setEmail(companyCreateRequest.getEmail());
+		company.setPhoneNo(companyCreateRequest.getPhoneNo());
+		company.setWebsite(companyCreateRequest.getWebsite());
+		company.setCreatedByUserId(companyCreateRequest.getUserId());
+		company.setContactPerson(companyCreateRequest.getContactPerson());
+		company.setMobileNo(companyCreateRequest.getMobileNo());
+		return companyRepository.save(company);
+	}
 
 	public List<Company> getCompany() {
 		return companyRepository.findAll();
+	}
+
+	public void deleteCompany(Long id) {
+		Company comp = new Company();
+		comp.setId(id);
+		companyRepository.delete(comp);
 	}
 }

@@ -21,4 +21,10 @@ public class DepartmentService {
     public List<Department> getAllDepartmentForBranch(Long branchId){
     	return departmentRepository.getAllDepartmentForBranch(branchId);
     }
+
+	public void deleteDepartment(Long departmentId) {
+		Department dept = new Department();
+		dept.setId(departmentId);
+		departmentRepository.delete(dept);
+	}
 }

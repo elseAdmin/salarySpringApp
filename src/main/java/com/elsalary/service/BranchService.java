@@ -30,4 +30,10 @@ public class BranchService {
 	public List<Branch> getAllBranchForCompany(Long companyId) {
 		return branchRespository.getAllBranchForCompany(companyId);
 	}
+
+	public void deleteBranch(Long branchId) {
+		Branch branch = new Branch();
+		branch.setId(branchId);
+		branchRespository.delete(branch);
+	}
 }
