@@ -23,7 +23,7 @@ public class BranchService {
 		entity.setName(body.getName());
 		entity.setCompanyId(body.getCompanyId());
 		entity.setCreatedByUserId(body.getCreatedByUserId());
-		entity.setPhone(body.getPhone());
+		//entity.setPhone(body.getPhone());
 		return branchRespository.save(entity);
 	}
 

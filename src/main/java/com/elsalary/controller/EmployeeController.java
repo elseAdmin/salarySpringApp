@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.elsalary.model.Employee;
 import com.elsalary.model.Request.EmployeeCreateRequest;
+import com.elsalary.service.EmployeeService;
 
 @RestController
 public class EmployeeController {

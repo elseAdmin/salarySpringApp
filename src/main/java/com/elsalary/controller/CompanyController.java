@@ -28,7 +28,7 @@ public class CompanyController {
 	}
 
 	@RequestMapping(value = "/company/delete/{companyId}", method = RequestMethod.GET)
-	public ResponseEntity delete(@RequestParam Long companyId) {
+	public ResponseEntity delete(@PathVariable Long companyId) {
 		companyService.deleteCompany(companyId);
 		return new ResponseEntity(HttpStatus.OK);
 	}

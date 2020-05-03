@@ -1,4 +1,4 @@
-package com.elsalary.controller;
+package com.elsalary.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class EmployeeService {
 		entity.setAddress(body.getAddress());
 		entity.setBasicSalary(body.getBasicSalary());
 		entity.setBranchId(body.getBranchId());
-		entity.setEsic(body.getEsic());
+		//entity.setEsic(body.getEsic());
 		entity.setCompanyId(body.getCompanyId());
 		entity.setDepartmentId(body.getDepartmentId());
 		entity.setContact(body.getContact());
