@@ -26,11 +26,29 @@ public class Branch {
     @Column
     private String address;
     @Column
-    private String phone;
+    private String mobile;
     @Column
     private String email;
     @Column
     private String contactPerson;
+    @Column
+    private String firmPfNumber;
+    @Column
+    private String pfGroupCode;
+    @Column
+    private String pfOffice;
+    @Column
+    private String firmEsicNumber;
+    @Column
+    private String esicGroupCode;
+    @Column
+    private String esicOffice;
+    @Column
+    private String otFormula;
+    @Column
+    private String otRate;
+    @Column
+    private String esiOnOt;
     @Column
     private Long companyId;
     @Column
@@ -39,7 +57,6 @@ public class Branch {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "create_date")
     private Date createDate;
-
     @UpdateTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "modify_date")

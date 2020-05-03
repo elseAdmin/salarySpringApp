@@ -21,41 +21,117 @@ public class Employee {
     @GeneratedValue
     private long id;
 	@Column
-	Long departmentId;
+	private Long employeeId;
 	@Column
-	Long companyId;
+	private Long punchId;
 	@Column
-	Long branchId;
+	private Long departmentId;
 	@Column
-	String name;
+	private Long companyId;
 	@Column
-	String maritalStatus;
+	private Long branchId;
 	@Column
-	Long contact;
+	private String name;
 	@Column
-	String address;
+	private String fatherName;
 	@Column
-	Date doj;
+	private String motherName;
 	@Column
-	Long employeeId;
+	private String designation;
 	@Column
-	Long punchId;
+	private String paymentMode;
 	@Column
-	Long basicSalary;
+	private String regular;
 	@Column
-	Long HRA;
+	private String empType;
 	@Column
-	Long variable;
+	private String salaryType;
 	@Column
-	String uan;
+	private String labourWelfare;
 	@Column
-	String pan;
+	private String epfStatus;
 	@Column
-	String esic;
+	private String pensionStatus;
 	@Column
-	String aadhaar;
+	private String edliStatus;
 	@Column
-	Long workingHours;
+	private String esicStatus;
+	@Column
+	private String nonRegularPF;
+	@Column
+	private String nonRegularESIC;
+	@Column
+	private String pfSalaryLimit;
+	@Column
+	private String pfSalaryLimitEmployer;
+	@Column
+	private String esicSalaryLimit;
+	@Column
+	private String esicSalaryLimitEmployer;
+	@Column
+	private String uan;
+	@Column
+	private String pfNumber;
+	@Column
+	private String previousPfNumber;
+	@Column
+	private String esicNumber;
+	@Column
+	private String dispensary;
+	@Column
+	private String reasonOfQuit;
+	@Column
+	private String leftReason;
+	@Column
+	private String maritalStatus;
+	@Column
+	private String sex;
+	@Column
+	private String handicap;
+	@Column
+	private String typeOfHandi;
+	@Column
+	private String nationality;
+
+	//Personal Info
+	@Column
+	private String qualification;
+	@Column
+	private Date dob;
+	@Column
+	private Date doj;
+	@Column
+	private Date doPF;
+	@Column
+	private Date doESIC;
+	@Column
+	private Date doLEFT;
+	@Column
+	private Date doRetire;
+	@Column
+	private int age;
+	@Column
+	private String incrementMonth;
+
+	@Column
+	private Long contact;
+	@Column
+	private String address;
+
+	@Column
+	private Long basicSalary;
+	@Column
+	private Long HRA;
+	@Column
+	private Long variable;
+
+	// Id proof of employee 
+	@Column
+	private String pan;
+	@Column
+	private String aadhaar;
+	@Column
+	private Long workingHours;
 	
 	@CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
